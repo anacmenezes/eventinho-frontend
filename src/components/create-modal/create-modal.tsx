@@ -24,13 +24,16 @@ const Input = ({ label, value, updateValue }: InputProps) => {
 
 export function CreateModal({ closeModal }: ModalProps) {
     const [title, setTitle] = useState("");
-    const [price, setPrice] = useState(0);
+    const [date, setDate] = useState("");
+    const [price, setPrice] = useState("");
     const [image, setImage] = useState("");
+    
     const { mutate, isSuccess, status } = useEventinhoDataMutate();
 
     const submit = () => {
         const eventinhoData: EventinhoData = {
             title, 
+            date,
             price,
             image
         };
@@ -47,6 +50,7 @@ export function CreateModal({ closeModal }: ModalProps) {
                 <h2>Cadastre um novo evento</h2>
                 <form className="input-container">
                     <Input label="titulo" value={title} updateValue={setTitle} />
+                    <Input label="data" value={date} updateValue={setDate} />
                     <Input label="preço" value={price} updateValue={setPrice} />
                     <Input label="imagem" value={image} updateValue={setImage} />
                 </form>

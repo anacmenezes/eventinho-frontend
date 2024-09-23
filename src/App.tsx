@@ -20,6 +20,7 @@ function App() {
           <Card
             price={eventinhoData.price} 
             title={eventinhoData.title} 
+            date={eventinhoData.date} 
             image={eventinhoData.image}
           />
         )}
